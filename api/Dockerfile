@@ -1,4 +1,4 @@
-FROM node:16-alpine
+FROM node:17-alpine
 
 
 WORKDIR /app
@@ -9,8 +9,9 @@ RUN npm install
 
 ENV CHOKIDAR_USEPOLLING=true
 ENV npm_config_cache=/tmp/npm/
+
 COPY . .
 
-EXPOSE 4000
+EXPOSE 3000
 
 CMD ["npm", "run", "dev"]
